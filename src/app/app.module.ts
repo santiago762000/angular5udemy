@@ -12,12 +12,16 @@ import {HttpClientModule} from '@angular/common/http';
 
 import {MaterialModule} from './extramodules/material/material.module';
 import { HomeComponent } from './home/home.component';
+import { SearchComponent } from './home/search/search.component';
+import { FavoritesComponent } from './home/favorites/favorites.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    SearchComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,

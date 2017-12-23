@@ -1,3 +1,15 @@
-<p>
-  search works!
-</p>
+<div *ngIf="showSearchBox else filterTemplate">
+<mat-input-container>
+  <input matInput type="text" placeholder="username" [(ngModel)]="username">
+</mat-input-container>  
+<button mat-icon-button (click)="showContents()">
+  <mat-icon>search</mat-icon>
+</button>
+</div>
+<ng-template #filterTemplate>
+  <div>
+      <button mat-button (click)="resetAll()">
+        Search Again
+      </button>
+  </div>  
+</ng-template>  

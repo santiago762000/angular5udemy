@@ -7,12 +7,11 @@ import {Router} from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  router:Router;
+  
   constructor(private _router:Router){
-    this.router=_router;
   }
 
   moveToLogin(){
-    this.router.navigate(['./login']);
+    this._router.navigate(['./login']);
   }
 }

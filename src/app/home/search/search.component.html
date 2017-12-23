@@ -1,18 +1,18 @@
 <div *ngIf="showSearchBox else filterTemplate">
-<mat-input-container>
-  <input matInput type="text" placeholder="username" [(ngModel)]="username">
-</mat-input-container>  
-<button mat-icon-button (click)="showContents()">
-  <mat-icon>search</mat-icon>
-</button>
+  <mat-input-container>
+    <input matInput type="text" placeholder="username" [(ngModel)]="username">
+  </mat-input-container>
+  <button mat-icon-button (click)="showContents()">
+    <mat-icon>search</mat-icon>
+  </button>
 </div>
 <ng-template #filterTemplate>
   <div>
-      <button mat-button (click)="resetAll()">
-        Search Again
-      </button>
-  </div>  
-</ng-template>  
+    <button mat-button (click)="resetAll()">
+      Search Again
+    </button>
+  </div>
+</ng-template>
 <div>
   <mat-table #table [dataSource]="dataSource" matSort>
     <ng-container matColumnDef="name">
@@ -20,13 +20,27 @@
       <mat-cell *matCellDef="let repo">{{repo.name}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="pushed_at">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Date</mat-header-cell>
-        <mat-cell *matCellDef="let repo">{{repo.pushed_at}}</mat-cell>
-      </ng-container>
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row;columns:displayedColumns"></mat-row>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Date</mat-header-cell>
+      <mat-cell *matCellDef="let repo">{{repo.pushed_at}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="actionsColum">
+      <mat-header-cell *matHeaderCellDef>
+        Options
+      </mat-header-cell>
+      <mat-cell *matCellDef="let repo">
+        <button mat-icon-button>
+          <mat-icon>info</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>favorite</mat-icon>
+          </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row;columns:displayedColumns"></mat-row>
 
   </mat-table>
   <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5,10,20]">
-  </mat-paginator>  
-</div>  
+  </mat-paginator>
+</div>

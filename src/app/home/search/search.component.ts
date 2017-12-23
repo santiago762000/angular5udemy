@@ -15,7 +15,7 @@ export class SearchComponent implements OnInit {
   showSearchBox:Boolean;
   repositoryData:Repository[]=[];
   dataSource= new MatTableDataSource(this.repositoryData);
-  displayedColumns=['name','pushed_at'];
+  displayedColumns=['name','pushed_at','actionsColum'];
 
   constructor(private myService:GithubService) { }
 

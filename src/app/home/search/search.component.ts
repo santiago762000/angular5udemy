@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {GithubService} from '../../services/github.service';
-import {MatTableDataSource, MatPaginator} from '@angular/material';
+import {MatTableDataSource, MatPaginator, MatSort} from '@angular/material';
 import {Repository} from '../../interfaces/repository';
 
 @Component({
@@ -20,9 +20,11 @@ export class SearchComponent implements OnInit {
   constructor(private myService:GithubService) { }
 
   @ViewChild(MatPaginator) paginator:MatPaginator;
+  @ViewChild(MatSort) sort:MatSort;
 
   ngAfterViewInit(){
     this.dataSource.paginator=this.paginator;
+    this.dataSource.sort=this.sort;
   }
   ngOnInit() {
     this.resetAll();
@@ -38,6 +40,7 @@ export class SearchComponent implements OnInit {
     data=>{
       this.dataSource=new MatTableDataSource<Repository>(data);
       this.dataSource.paginator=this.paginator;
+      this.dataSource.sort=this.sort;
       this.showSearchBox=false;
     },
     err=>{

@@ -17,8 +17,11 @@ export class LoginComponent implements OnInit {
 
   checkUserNamePassword(){
     if(this.username=="chucknorris@myproject.com" && this.password=="idontneedapassword"){
-      alert("Authenticated");
+      this._router.navigate(['./home']);
+    }else{
+      alert("Incorrect credentials");
     }
+
   }
 
   checkKey(event){

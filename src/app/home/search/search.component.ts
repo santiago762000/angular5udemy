@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {GithubService} from '../../services/github.service';
-import {MatTableDataSource} from '@angular/material';
+import {MatTableDataSource, MatPaginator} from '@angular/material';
 import {Repository} from '../../interfaces/repository';
 
 @Component({
@@ -19,6 +19,11 @@ export class SearchComponent implements OnInit {
 
   constructor(private myService:GithubService) { }
 
+  @ViewChild(MatPaginator) paginator:MatPaginator;
+
+  ngAfterViewInit(){
+    this.dataSource.paginator=this.paginator;
+  }
   ngOnInit() {
     this.resetAll();
   }
@@ -32,6 +37,7 @@ export class SearchComponent implements OnInit {
   this.myService.getRepositories(this.username).subscribe(
     data=>{
       this.dataSource=new MatTableDataSource<Repository>(data);
+      this.dataSource.paginator=this.paginator;
       this.showSearchBox=false;
     },
     err=>{

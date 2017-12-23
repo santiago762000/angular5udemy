@@ -1,3 +1,30 @@
 <p>
-  login works!
+  <mat-card class="card-style">
+    <mat-card-header>
+      <mat-card-title>Authentication</mat-card-title>
+      <mat-card-subtitle>Please enter your username and password</mat-card-subtitle>
+    </mat-card-header>
+    <div align="center">
+      <img mat-cardimage src="https://angular.io/assets/images/logos/angular/angular.svg" class="imagecardstyle"/>
+    </div>  
+    <mat-card-content>
+      <div align="center">
+        <mat-form-field>
+          <input matInput placeholder="username">
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+          <input matInput placeholder="password" type="password">
+        </mat-form-field>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <div align="center">
+        <button mat-button>
+          <mat-icon>check</mat-icon>
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
 </p>

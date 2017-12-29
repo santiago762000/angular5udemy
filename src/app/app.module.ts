@@ -14,6 +14,7 @@ import {MaterialModule} from './extramodules/material/material.module';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './home/search/search.component';
 import { FavoritesComponent } from './home/favorites/favorites.component';
+import { UtcPipe } from './pipes/utc.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FavoritesComponent } from './home/favorites/favorites.component';
     LoginComponent,
     HomeComponent,
     SearchComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    UtcPipe
   ],
   imports: [
     BrowserModule,

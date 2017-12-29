@@ -1,7 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import {GithubService} from '../../services/github.service';
 import {MatTableDataSource, MatPaginator, MatSort} from '@angular/material';
 import {Repository} from '../../interfaces/repository';
+import {UtcPipe} from '../../pipes/utc.pipe';
+
 
 @Component({
   selector: 'app-search',
@@ -49,4 +51,14 @@ export class SearchComponent implements OnInit {
   )
   }
 
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim();
+    filterValue = filterValue.toLowerCase();
+    //alert(filterValue);
+    
+    this.dataSource.filterPredicate =
+        (data: Repository, filter: string) => {
+          return (data.name.indexOf(filter) != -1 || data.pushed_at.toString().indexOf(filter) != -1)};
+          this.dataSource.filter = filterValue;  
+  }
 }

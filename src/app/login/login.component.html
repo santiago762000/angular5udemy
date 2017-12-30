@@ -23,9 +23,12 @@
     </mat-card-content>
     <mat-card-actions>
       <div align="center">
-        <button mat-button (click)="checkUserNamePassword()">
-          <mat-icon>check</mat-icon>
-        </button>
+        <span matTooltip="Click here to check credentials">
+            <button mat-button (click)="checkUserNamePassword()">
+                <mat-icon>check</mat-icon>
+              </button>
+        </span>
+        
       </div>
     </mat-card-actions>
   </mat-card>

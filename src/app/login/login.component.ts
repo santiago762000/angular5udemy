@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import {ErrorService} from '../services/error.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers:[ErrorService]
 })
 export class LoginComponent implements OnInit {
 
   username:string;
   password:string;
-  constructor(private _router:Router) { }
+  constructor(private _router:Router,private _errorService:ErrorService) { }
 
   ngOnInit() {
   }
@@ -19,7 +21,7 @@ export class LoginComponent implements OnInit {
     if(this.username=="chucknorris@myproject.com" && this.password=="idontneedapassword"){
       this._router.navigate(['./home']);
     }else{
-      alert("Incorrect credentials");
+      this._errorService.showSnackBar("Login Incorrect","Please check your credetials");
     }
 
   }

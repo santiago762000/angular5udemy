@@ -32,10 +32,10 @@
         Options
       </mat-header-cell>
       <mat-cell *matCellDef="let repo">
-        <button mat-icon-button>
+        <button mat-icon-button (click)="showDialogData(repo)">
           <mat-icon>info</mat-icon>
         </button>
-        <button mat-icon-button>
+        <button mat-icon-button (click)="addToFavorites(repo)">
             <mat-icon>favorite</mat-icon>
           </button>
       </mat-cell>

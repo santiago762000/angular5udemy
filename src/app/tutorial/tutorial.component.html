@@ -1,3 +1,43 @@
-<p>
-  tutorial works!
-</p>
+
+<mat-horizontal-stepper [linear]="isLinear">
+  <mat-step>
+    
+      <ng-template matStepLabel>Github</ng-template>
+      Enter a github account name in the search box
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    
+  </mat-step>
+  <mat-step>
+      <ng-template matStepLabel>List</ng-template>
+      Search through the list of repositories.
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+  </mat-step>
+  <mat-step>
+      <ng-template matStepLabel>Add</ng-template>
+      Click on the <mat-icon>favorite</mat-icon> to add the repo to your favorite list.
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+  </mat-step>
+  <mat-step>
+      <ng-template matStepLabel>Favorites</ng-template>
+      If you want to see the list of favorites, you can click on the favorites tab.
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    Thanks for following this tutorial
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

@@ -17,6 +17,8 @@ import { FavoritesComponent } from './home/favorites/favorites.component';
 import { UtcPipe } from './pipes/utc.pipe';
 import { CommonDialogComponent } from './dialogs/common-dialog/common-dialog.component';
 
+import {AuthGuard} from './guards/auth.guard';
+import {AuthService} from './services/auth.service';
 
 
 @NgModule({
@@ -40,7 +42,7 @@ import { CommonDialogComponent } from './dialogs/common-dialog/common-dialog.com
 
   ],
   entryComponents:[CommonDialogComponent],
-  providers: [],
+  providers: [AuthGuard,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

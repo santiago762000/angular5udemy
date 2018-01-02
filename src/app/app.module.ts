@@ -19,6 +19,7 @@ import { CommonDialogComponent } from './dialogs/common-dialog/common-dialog.com
 
 import {AuthGuard} from './guards/auth.guard';
 import {AuthService} from './services/auth.service';
+import {ErrorService} from './services/error.service';
 
 
 @NgModule({
@@ -42,7 +43,7 @@ import {AuthService} from './services/auth.service';
 
   ],
   entryComponents:[CommonDialogComponent],
-  providers: [AuthGuard,AuthService],
+  providers: [AuthGuard,AuthService,ErrorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

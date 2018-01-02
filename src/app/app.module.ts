@@ -20,6 +20,7 @@ import { CommonDialogComponent } from './dialogs/common-dialog/common-dialog.com
 import {AuthGuard} from './guards/auth.guard';
 import {AuthService} from './services/auth.service';
 import {ErrorService} from './services/error.service';
+import { TutorialComponent } from './tutorial/tutorial.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import {ErrorService} from './services/error.service';
     SearchComponent,
     FavoritesComponent,
     UtcPipe,
-    CommonDialogComponent
+    CommonDialogComponent,
+    TutorialComponent
   ],
   imports: [
     BrowserModule,

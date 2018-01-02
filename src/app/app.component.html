@@ -1,7 +1,36 @@
-<mat-toolbar color="primary">
-    <span>Angular Demo Project</span>
-    <span class="align_to_right"></span>
-    <button mat-button [routerLink]="['login']" *ngIf="!auth.authenticated"><mat-icon>account_circle</mat-icon>Login</button>
-    <button mat-button *ngIf="auth.authenticated" (click)="logout()"><mat-icon>exit_to_app</mat-icon>Logout</button>
-</mat-toolbar>  
-<router-outlet></router-outlet>
+<mat-drawer-container>
+    <mat-drawer #drawer  mode="side" class="example-sidenav">
+    <h4 mat-subheader>Extra Options</h4>
+    
+    
+      <p><a href="#" [routerLink]="['login']">Home</a></p>
+      <p><a href="#" [routerLink]="['tutorial']">Tutorial</a></p>
+    </mat-drawer>
+  
+    <div >
+      <mat-toolbar color="primary">
+        <span>Angular Demo Project</span>
+        <span class="align_to_right"></span>
+        <button mat-button [routerLink]="['login']" *ngIf="!auth.authenticated">
+            <mat-icon>account_circle</mat-icon>Login</button>
+        <!--button mat-button *ngIf="auth.authenticated" (click)="logout()"><mat-icon>exit_to_app</mat-icon>Logout</button-->
+            <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="auth.authenticated">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="drawer.toggle()">
+                    <mat-icon>help</mat-icon>
+                    <span>Other Options</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span>Logout</span>
+                </button>
+            </mat-menu>
+        
+    
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+    </div>
+  
+  </mat-drawer-container>

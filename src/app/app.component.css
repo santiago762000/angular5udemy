@@ -1,3 +1,6 @@
 .align_to_right{
     flex: 1 1 auto
 }
+.leftPanel{
+    width:120px;
+}

@@ -19,6 +19,8 @@ import { CommonDialogComponent } from './common-dialog/common-dialog.component';
 import {AuthService} from './services/auth.service';
 import {AuthGuard} from './guards/auth.guard';
 import {ErrorService} from './services/error.service';
+import { MenuComponent } from './menu/menu.component';
+import { TutorialComponent } from './tutorial/tutorial.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import {ErrorService} from './services/error.service';
     SearchComponent,
     FavoritesComponent,
     UtcPipe,
-    CommonDialogComponent
+    CommonDialogComponent,
+    MenuComponent,
+    TutorialComponent
   ],
   imports: [
     BrowserModule,

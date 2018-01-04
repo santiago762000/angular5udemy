@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './home/search/search.component';
 import { FavoritesComponent } from './home/favorites/favorites.component';
 import { UtcPipe } from './pipes/utc.pipe';
+import { CommonDialogComponent } from './common-dialog/common-dialog.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { UtcPipe } from './pipes/utc.pipe';
     HomeComponent,
     SearchComponent,
     FavoritesComponent,
-    UtcPipe
+    UtcPipe,
+    CommonDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +37,7 @@ import { UtcPipe } from './pipes/utc.pipe';
     MaterialModule
 
   ],
+  entryComponents:[CommonDialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

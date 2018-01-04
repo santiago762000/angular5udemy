@@ -16,6 +16,10 @@ import { SearchComponent } from './home/search/search.component';
 import { FavoritesComponent } from './home/favorites/favorites.component';
 import { UtcPipe } from './pipes/utc.pipe';
 import { CommonDialogComponent } from './common-dialog/common-dialog.component';
+import {AuthService} from './services/auth.service';
+import {AuthGuard} from './guards/auth.guard';
+import {ErrorService} from './services/error.service';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +42,7 @@ import { CommonDialogComponent } from './common-dialog/common-dialog.component';
 
   ],
   entryComponents:[CommonDialogComponent],
-  providers: [],
+  providers: [AuthService, AuthGuard, ErrorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

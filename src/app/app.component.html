@@ -1,7 +1,21 @@
+<mat-drawer-container>
+    <mat-drawer #drawer mode="slide">
+        <h4 mat-subheader>Extra Options</h4>
+        <p>
+            <a href="#" [routerLink]="['home']">Home</a>
+        </p>    
+        <p>
+            <a href="#" [routerLink]="['tutorial']">Tutorial</a>
+        </p>    
+    </mat-drawer>    
+</mat-drawer-container>    
+
+<div>
 <mat-toolbar color="primary">
     <span>Angular Demo Project</span>
     <span class="align_to_right"></span>
     <button *ngIf="!auth.authenticated" mat-button [routerLink]="['login']"><mat-icon>account_circle</mat-icon>Login</button>
-    <app-menu *ngIf="auth.authenticated"></app-menu>
+    <app-menu *ngIf="auth.authenticated" [drawer]="drawer"></app-menu>
 </mat-toolbar>  
 <router-outlet></router-outlet>
+</div>

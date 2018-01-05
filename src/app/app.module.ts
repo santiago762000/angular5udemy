@@ -20,6 +20,7 @@ import {AuthService} from './services/auth.service';
 import {AuthGuard} from './guards/auth.guard';
 import {ErrorService} from './services/error.service';
 import { MenuComponent } from './menu/menu.component';
+import { TutorialComponent } from './tutorial/tutorial.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { MenuComponent } from './menu/menu.component';
     FavoritesComponent,
     UtcPipe,
     CommonDialogComponent,
-    MenuComponent
+    MenuComponent,
+    TutorialComponent
   ],
   imports: [
     BrowserModule,

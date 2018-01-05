@@ -26,8 +26,6 @@ export class AuthService {
 
 
    login(username:String, password:String){
-     alert(username);
-     alert(password);
      this.auth0.client.login({
        realm:'Username-Password-Authentication',
        username,

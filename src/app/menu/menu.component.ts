@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import {AuthService} from '../services/auth.service';
 
 @Component({
@@ -9,6 +9,7 @@ import {AuthService} from '../services/auth.service';
 })
 export class MenuComponent implements OnInit {
 
+  @Input() drawer:any;
   constructor(private auth:AuthService) { }
 
   ngOnInit() {

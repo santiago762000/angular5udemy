@@ -15,4 +15,11 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
   }
 
+  logout(){
+    if(this.drawer.opened){
+      this.drawer.toggle();
+      this.auth.logout();
+    }
+  }
+
 }

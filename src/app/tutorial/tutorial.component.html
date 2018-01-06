@@ -1,3 +1,25 @@
-<p>
-  tutorial works!
-</p>
+<mat-horizontal-stepper>
+  <mat-step>
+    <ng-template matStepLabel>Github</ng-template>
+    List all the repositories from a particular username.
+    <div>
+      <button mat-button matStepperNext>Next</button>
+    </div>  
+  </mat-step>
+  <mat-step>
+      <ng-template matStepLabel>Favorite</ng-template>
+      Then add the repo to your favorite lisy
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>  
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        Your repository was added to the favorites, Thanks for following the tutorial
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+        </div>  
+      </mat-step>
+    
+</mat-horizontal-stepper>  
